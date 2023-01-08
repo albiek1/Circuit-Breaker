@@ -232,7 +232,6 @@ public class ChipInterfaceEditor : InteractionHandler
                 if (isGroup)
                 {
                     spawnedSignal.GroupID = currentGroupID;
-                    spawnedSignal.displayGroupDecimalValue = true;
                 }
                 signals.Add(spawnedSignal);
                 spawnedSignals[i] = spawnedSignal;
@@ -278,7 +277,6 @@ public class ChipInterfaceEditor : InteractionHandler
             if (isGroup)
             {
                 spawnedSignal.GroupID = currentGroupID;
-                spawnedSignal.displayGroupDecimalValue = true;
             }
             signals.Add(spawnedSignal);
             spawnedSignals[i] = spawnedSignal;
@@ -343,7 +341,6 @@ public class ChipInterfaceEditor : InteractionHandler
             for(int i = 0; i < selectedSignals.Count; i++)
             {
                 selectedSignals[i].UpdateSignalName(nameField.text);
-                selectedSignals[i].useTwosComplement = twosComplementToggle.isOn;
             }
         }
     }
@@ -429,8 +426,6 @@ public class ChipInterfaceEditor : InteractionHandler
         nameField.text = selectedSignals[0].signalName;
         nameField.Select();
         nameField.caretPosition = nameField.text.Length;
-        twosComplementToggle.gameObject.SetActive(isGroup);
-        twosComplementToggle.isOn = selectedSignals[0].useTwosComplement;
         UpdateUIProperties();
     }
 

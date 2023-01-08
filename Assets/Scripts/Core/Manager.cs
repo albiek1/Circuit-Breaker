@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    public event System.Action<Chip> customChipCreated;
-
     public ChipEditor chipEditorPrefab;
-    public ChipPackage chipPackagePrefab;
     public Wire wirePrefab;
     public Chip[] builtinChips;
 
@@ -19,7 +16,6 @@ public class Manager : MonoBehaviour
     {
         instance = this;
         activeChipEditor = FindObjectOfType<ChipEditor>();
-        //FindObjectOfType<CreateMenu>().onChipCreatePressed += SaveAndPackageChip;
     }
 
     private void Start()

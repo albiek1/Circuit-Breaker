@@ -12,8 +12,6 @@ public class ChipSignal : Chip
     public MeshRenderer wireRenderer;
 
     int groupID = -1;
-    public bool displayGroupDecimalValue { get; set; } = false;
-    public bool useTwosComplement { get; set; } = true;
 
     [HideInInspector]
     public string signalName;

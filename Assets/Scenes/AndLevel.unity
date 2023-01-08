@@ -466,7 +466,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chipEditorPrefab: {fileID: 832160983}
-  chipPackagePrefab: {fileID: 3466065292472579655, guid: 9fb319e72c07f284fae21149ea98828b, type: 3}
   wirePrefab: {fileID: 1032286099195013832, guid: 9f863ebcffbdf6b479ed531fe8532ca6, type: 3}
   builtinChips:
   - {fileID: 4957849776635641330, guid: a6d8ab497b7b8b643a29fe1edc442725, type: 3}
