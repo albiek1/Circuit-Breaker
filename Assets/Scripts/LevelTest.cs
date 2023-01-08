@@ -11,6 +11,8 @@ public class LevelTest : MonoBehaviour
     public bool testStart = false;
     public List<float> inputSpawnPos = new List<float>();
     public List<float> outputSpawnPos = new List<float>();
+    public GameObject successBox;
+    public GameObject implementationHolder;
 
     int inputCount;
     int outputCount;
@@ -37,11 +39,12 @@ public class LevelTest : MonoBehaviour
         }
         inputEditor.gameObject.SetActive(false);
         outputEditor.gameObject.SetActive(false);
-        Debug.Log(simulation.minStepTime);
         for(int i = 0; i < testNums.Count; i++)
         {
             testBar.text += testNums[i]+'\n';
         }
+        implementationHolder.SetActive(true);
+        successBox.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,13 +80,13 @@ public class LevelTest : MonoBehaviour
                 if (int.Parse(b[j].ToString()) == outputEditor.signals[j].currentState){
                     results.Add(true);
                     testBar.text += testNums[i] + " O" + '\n';
-                    Debug.Log(int.Parse(b[j].ToString()) + " : " + outputEditor.signals[j].currentState + "succsess");
+                    //Debug.Log(int.Parse(b[j].ToString()) + " : " + outputEditor.signals[j].currentState + "succsess");
                 }
                 else
                 {
                     results.Add(false);
                     testBar.text += testNums[i] + " X" + '\n';
-                    Debug.Log("Failure");
+                    //Debug.Log("Failure");
                 }
             }
         }
@@ -94,11 +97,17 @@ public class LevelTest : MonoBehaviour
         }
         else
         {
-            Debug.Log("Level complete!");
+            implementationHolder.SetActive(false);
+            successBox.SetActive(true);
         }
         for(int i = 0; i < inputCount; i++)
         {
             SetInput(0, i);
         }
+    }
+
+    public void BeginTest()
+    {
+        this.testStart = true;
     }
 }
